@@ -5,3 +5,9 @@ Widening:
        Widening is Apply only for PRIMITIVE's only.
       Widening is n't apply for PRIMITVE's.
 
+Final:
+     For Final class inheritance is not applicable . 
+     
+     If object of subclass with
+     reference of super class then subclass method and super class variable will be executed.
+     Hence output is "Value-in SubTest100
