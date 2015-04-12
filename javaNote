@@ -1,3 +1,7 @@
 ".class" files are genarated for (class , abstract class , interface, enum).
-We can excute abstract class also .
+We can excute abstract class also.
+
+Widening: 
+       Widening is Apply only for PRIMITIVE's only.
+      Widening is n't apply for PRIMITVE's.
 
