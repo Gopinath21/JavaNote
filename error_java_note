@@ -1,0 +1,38 @@
+class Person{
+     private String name;
+     private int age;
+     
+     public void setName(String name)
+     {
+    	 this.name=name;
+     }
+     public void setAge(int age)
+     {
+    	 this.age=age;
+     }
+     public String getName(){
+    	 return name;
+     }
+     public int getAge(){
+    	 return age;
+     }
+  /*   public void srtInfo(String name,int age){
+    	 setAge(age);
+    	 setName(name);
+     }
+
+     */
+     
+}
+public class Encap1 {
+
+	
+	public static void main(String[] args) {
+	Person person1=new Person();
+ person1.setName("Murali");
+	 person1.setAge(30);
+	System.out.println(person1.getAge());
+	System.out.println(person1.getName());
+	}
+
+}
