@@ -1,0 +1,8 @@
+Annonimious Array :
+ new int[]{10,20,30};
+ 
+ Size no need to specify 
+ 
+ Change the anonimous array into Named Array :
+ 
+ int[] a=new int[]{10,20,30};
