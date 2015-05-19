@@ -1,0 +1,25 @@
+import java.io.*;
+class A{
+public static void main(String[]a ){
+
+	FileReader r=new FileReader("aa.txt");
+	char [] c=new char[(int)r.length()];
+	r.read(c);
+
+
+	for(Char ch:c){
+
+	System.out.println(ch);
+
+
+	int i=r.read();
+		while(i!=-1){
+		System.out.println((char)i);
+			i=r.read();
+
+		}
+}
+}
+
+
+}
