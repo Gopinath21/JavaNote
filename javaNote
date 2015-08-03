@@ -20,5 +20,5 @@ Top class applicable modifers are  only 5  : (pdfas) (public ,<default>, final,a
 
 Inner class applicable modifers are only 8: (pdfas) + (pps) ;pps= protected , static , private.
 
-Illegal combination for abstract keyword:
+Illegal combination for abstract keyword in methods
 final , static, synchronized , strictfp , native , private 
