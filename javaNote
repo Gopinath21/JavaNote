@@ -14,3 +14,8 @@ Final:
 
 
 An enum declaration is a special kind of class declaration:1) It can be declared at the top-level and as static enum declaration. 2) It is implicitly static, i.e. no outer object is associated with an enum constant. 3) It is implicitly final unless it contains constantspecific class bodies, but it can implement interfaces. 4) It cannot be declared abstract unless each abstract method is * overridden in the constant-specific class body of every enum constant. 5)Local (inner) enum declaration is NOT OK! Here in public void foo() { enum JavaExams { SCJP, SCWD, OCJP } } enum declaration is local within method so compile time error.
+
+==========3/8/2015
+Top class applicable modifers are  only 5  : (pdfas) (public ,<default>, final,abstract,stictfp.
+
+Inner class applicable modifers are only 8: (pdfas) + (pps) ;pps= protected , static , private.
