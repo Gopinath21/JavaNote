@@ -19,3 +19,6 @@ An enum declaration is a special kind of class declaration:1) It can be declared
 Top class applicable modifers are  only 5  : (pdfas) (public ,<default>, final,abstract,stictfp.
 
 Inner class applicable modifers are only 8: (pdfas) + (pps) ;pps= protected , static , private.
+
+Illegal combination for abstract keyword:
+final , static, synchronized , strictfp , native , private 
