@@ -22,3 +22,5 @@ Inner class applicable modifers are only 8: (pdfas) + (pps) ;pps= protected , st
 
 Illegal combination for abstract keyword in methods
 final , static, synchronized , strictfp , native , private 
+7/8/2015
+Exception are two type :1) Checked Exception ( Compiler will check )2) Unchecked Exception  
