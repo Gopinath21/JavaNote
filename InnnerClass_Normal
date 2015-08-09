@@ -121,3 +121,66 @@ class Outer {
 
 
 }
+======================================================================
+Annonimous Inner class :-
+
+The main purpose of Anonious inner class is , one time usage .
+
+1) 
+
+================================================
+class My{
+
+public static void main(String ...args){
+
+Thread t=new Thread(){
+
+public void run(){
+
+for(int i=0;i<100;i++)
+System.out.prinlln("sairam");
+}		
+
+};
+	t.start();
+}
+
+}
+
+
+
+classs MyInt{
+
+public static void main(String args[]){
+
+		new Thread(new Runnable(){
+		for(int i=0li<10;i++)
+		System.out.println(i);
+
+}).start();
+
+
+for(int i=10;i<1000;i++)
+System.out.println("this is frm main thread");
+}
+
+}
+
+
+
+class InrIInter
+{
+
+		Runnable r=new Runnable(){
+		public void run(){
+
+		for(int i=10;i<100;i++)
+		System.out.println(i);
+                                }
+					};
+	Thread t =new Thread(r);
+t.start();
+
+for(int i=10;i<1000;i++)
+System.out.println("this is frm main thread");
+}
