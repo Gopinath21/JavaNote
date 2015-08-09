@@ -48,3 +48,9 @@ class Test{
 =============================================
 Outer class Applicable modifier : public , <default> , abstract ,final , strictfp.
 Inner Class :                     private, protected , static.
+=======================================================================================================================
+2) Method local inner class:-
+			This subsitution for nested methods. 
+			.class format : Outer$1Inner.class
+		Applicable modifers for method local inner class : final, abstract, strictfp .
+		Imp Note:We cant access local variable of that method directlty o.w we will get C.E...if and if that is final variable then that variable can access.
