@@ -1,0 +1,50 @@
+ Inner class:
+            if object depends on another object that we go for Inner Class concept.
+        Inner class types:
+                          1)Normal Inner class( without static)
+                          2)Method over Inner class
+                          3)Annonimous inner class
+                          4)static Inner class
+                          
+                          
+1) Noraml Inner class:-
+                    static member's or not allowed . if we do C.E.
+                    
+                    
+                    
+                    class Outer{
+		int x=10;
+		
+		class Inner{
+				int x=100;
+		public void m1(){
+					int x=1000;
+				System.out.prinln(x);//1000
+				System.out.println(this.x);//100
+				System.out.println(Outer.this.x); //10
+				System.out.println("Inner");
+			}	
+	}
+		
+public static void main(String args[]){
+	Outer$Inner oi=new outer().new Inner();
+			oi.m1();	
+		}
+	public void m(){
+			Inner i=new Inner();
+				i.m1();
+	}
+
+
+}
+
+
+class Test{
+		public static void main(String[] args){
+				Outer$Inner oi=new Outer().new Inner();
+					oi.m1();					
+			}
+}
+=============================================
+Outer class Applicable modifier : public , <default> , abstract ,final , strictfp.
+Inner Class :                     private, protected , static.
