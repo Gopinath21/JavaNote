@@ -54,3 +54,70 @@ Inner Class :                     private, protected , static.
 			.class format : Outer$1Inner.class
 		Applicable modifers for method local inner class : final, abstract, strictfp .
 		Imp Note:We cant access local variable of that method directlty o.w we will get C.E...if and if that is final variable then that variable can access.
+======================
+class Outer {
+			int x=30;
+			static int y=10;
+	public void m(){
+				int methodlcoalvaraiable=10;
+				final int constantvalue=33;
+			class Inner {
+					
+					public void m1(){
+					
+					System.out.println(x);
+					System.out.println(y);					
+		
+					System.out.prinln(constantvalue);// 33
+					System.out,println(methodlocalvariable); // C.E
+					
+					}
+					public void sum(int x,int y){
+					System.out.println(x+y);
+						}	
+			}
+			Inner i=new Inner();
+			i.sum(20,30);
+			i.sum(4,3);
+	}
+
+		public static void main(String[] ar){
+					Outer o=new Outer();
+					o.m();
+			}
+
+
+}
+======================================================================================
+class Outer {
+			int x=30;
+			static int y=10;
+	public static void m(){
+					
+			class Inner {
+					
+					public void m1(){
+					
+					System.out.println(x); C.E
+					System.out.println(y);					
+
+
+
+
+					}
+					public void sum(int x,int y){
+					System.out.println(x+y);
+						}	
+			}
+			Inner i=new Inner();
+			i.sum(20,30);
+			i.sum(4,3);
+	}
+
+		public static void main(String[] ar){
+					Outer o=new Outer();
+					o.m();
+			}
+
+
+}
