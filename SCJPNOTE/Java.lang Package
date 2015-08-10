@@ -1,0 +1,27 @@
+java.lang package is default package .
+
+11 methods present in java.lang package:--
+
+1) String toString()    t
+2)String hashCode()     f
+3)Object clone() throws CloneNotSupportedException t
+4)Class getClass()      t
+5) boolean finalize() throws Throwable  f
+
+7) boolean wait() throws IE  f
+8)boolean wait(ms)  throws IE  f 
+9)boolean wait(ms,ns) throws IE  f
+10)boolean nofify()             f 
+11)booelan notifyAll()             f
+12) boolean equals(Objec o)               t
+
+=============================================================================================================================
+1) String toString()
+2) int hashCode()
+3)void finalize() throws Throwable
+4)void wait() throws IE
+5)boolean equals(Object o) 
+6)Class getClass()
+7)Object clone() throws CNSE
+
+9)void notify() 
