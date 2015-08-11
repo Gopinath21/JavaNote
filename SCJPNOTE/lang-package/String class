@@ -1,2 +1,4 @@
 In String class :
 equals(object o) is overridden for content comparision
+
+intern() : Is a method used to create equalent String object in SCP
