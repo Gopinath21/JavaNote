@@ -8,7 +8,7 @@ if we override the object then we should be consider the following things
 3)return false for NullPointerException
 
 equals() method overriden for content in following classes:-
-String, StringBuffer, all Wrapper Classes , all Collection classes.
+String,  all Wrapper Classes , all Collection classes.
 
 
 public boolean equals(Object o)
