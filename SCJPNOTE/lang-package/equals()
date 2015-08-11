@@ -7,6 +7,30 @@ if we override the object then we should be consider the following things
 2)return false for ClassCastException
 3)return false for NullPointerException
 
+equals() method overriden for content in following classes:-
+String, StringBuffer, all Wrapper Classes , all Collection classes.
 
 
-Note:- if we override the equals() ,we should override the hashCode()
+public boolean equals(Object o)
+{
+          try{
+                Student s=(Student)o;
+            if(name.equals(s.name) && rollno==s.rollno)
+            return true;
+            else 
+            return false;
+            }
+            catch(ClassCastException e)
+            {
+            return false;
+            }
+            catch(NullPointerException o){
+            return false;
+            }
+    
+}
+
+
+
+Note:- if we override the equals() ,we should override the hashCode() & same parameters for hashCode() , which are used for 
+equals();
