@@ -3,7 +3,7 @@ String is immutable . it means we can't change String object value , if we try c
 mutable , we can change the value of the object , all oparaions will be refflected in same object
 equals(object o) is overridden for content comparision
 
-intern() : Is a method used to create equalent String object in SCP
+intern() : Is a method used to create equalent String object in SCP if corresponding object is not aviable then only
 
 class InternEg{
     public static void main(String[] args){
