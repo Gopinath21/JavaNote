@@ -1,0 +1,2 @@
+In String class :
+equals(object o) is overridden for content comparision
