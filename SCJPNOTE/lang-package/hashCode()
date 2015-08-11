@@ -20,4 +20,4 @@ int hashCode() :
     
 Note:--
 Object class toString() method internall call hashCode() method.
-if we are overriding the toStinng() then , it is better to override the hashCode() method  also
+
