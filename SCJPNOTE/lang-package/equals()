@@ -1,2 +1,6 @@
 boolean equals() :
-Object class eqauls() used to compare the referance type
+Object class eqauls() used to compare the referance( address)
+
+
+
+Note:- if we override the equals() ,we should override the hashCode()
