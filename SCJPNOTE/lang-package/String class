@@ -1,4 +1,6 @@
 In String class :
+String is immutable . it means we can't change String object value , if we try change we will get new Object .But StringBuffer is
+mutable , we can change the value of the object , all oparaions will be refflected in same object
 equals(object o) is overridden for content comparision
 
 intern() : Is a method used to create equalent String object in SCP
