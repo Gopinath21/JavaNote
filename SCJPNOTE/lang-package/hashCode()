@@ -1,0 +1,23 @@
+int hashCode() :
+                hashCode is unique code genarated by JVM.
+                By using this id , JVM save this Object into hash related datastructures (like hashMap , hashtable, ..) 
+    hashCode() : in Object class create a unique id based on address of the Object .
+    
+    Note: If we are overriden the hashCode() , this method should be return unique value. 
+    
+    
+    class Employee
+    {
+            .....
+            ..
+            int employeeID;
+          protected int hashCode(){
+            return employeeID;
+          }
+    
+    }
+    
+    
+Note:--
+Object class toString() method internall call hashCode() method.
+if we are overriding the toStinng() then , it is better to override the hashCode() method  also
