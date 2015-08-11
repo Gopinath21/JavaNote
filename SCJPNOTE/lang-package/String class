@@ -13,3 +13,12 @@ class InternEg{
             System.out.println(s1==s2);//true
     }
 }
+
+
+String class Constructor's:-
+
+1) String s =new String();
+2)String s=new String(String constant);
+3)String s=new String(StringBuffer sb);
+4)String s=new String(char[] ca);
+5)String s=new String(byte[] b); // byte value converted into characters 
