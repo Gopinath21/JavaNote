@@ -2,3 +2,12 @@ In String class :
 equals(object o) is overridden for content comparision
 
 intern() : Is a method used to create equalent String object in SCP
+
+class InternEg{
+    public static void main(String[] args){
+            String s=new String("goovindha");
+            String s1="goovindha";
+            String s2=s.intern();
+            System.out.println(s1==s2);//true
+    }
+}
