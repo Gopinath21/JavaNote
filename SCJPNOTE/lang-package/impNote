@@ -1,0 +1,6 @@
+String s="sairam"   // variable
+final String s1="sairam"    //here s1 is constant 
+
+
+variable opration are done at Run time
+constant variable oparations are done at copile time.
