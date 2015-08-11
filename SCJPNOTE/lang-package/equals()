@@ -2,5 +2,11 @@ boolean equals() :
 Object class eqauls() used to compare the referance( address)
 
 
+if we override the object then we should be consider the following things
+1) return flase for hetorogenious elements 
+2)return false for ClassCastException
+3)return false for NullPointerException
+
+
 
 Note:- if we override the equals() ,we should override the hashCode()
