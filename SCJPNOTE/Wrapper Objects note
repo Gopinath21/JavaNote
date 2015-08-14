@@ -1,0 +1,30 @@
+
+
+Utility methods:
+1)valueOf() : Used instead of constructor...
+        used : to CREATE WRAPPER OBJECT 
+        
+This is used to convert String object into wrapper object , every wrapper class have this static method except Character class.
+  public static Wrapper valueOf(String s); this  method hv all wrapper classes except Character
+  public static Wrapper valueOf(primitive p); this method hv all wrapper classes including the Character class
+  
+Note: this method used to get Wrapper Object, from String or primitive .& this is static method
+
+2)xxxValue(): Used to get the primitive from wrapper Object 
+
+Every wrapper class have following methods:-6
+public int intValue();
+public short shortValue()
+public byte byteValue();
+public long longValue();
+public float floatValue();
+public double doubleValue();
+
+Eg: Double d=new Double(11.11);
+System.out.println(d.intValue());
+System.out.println(d.intValue());
+
+
+Character class contain charValue()
+                Character c
+  
