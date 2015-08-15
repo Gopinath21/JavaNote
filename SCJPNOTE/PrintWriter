@@ -30,6 +30,24 @@ PrintWriter:-
   println(double d)
   println(String s)
   println(char[] ch)
+  ===================================================================
+  class P{
+  public static void main(String[] args) throws IOException{
+                    File f=new File("abc.txt");
+                    PrintWriter pw=new PrintWriter(f);
+                    pw.write(100); //d
+                    pw.print(100) ; //100
+                    pw.println(true);
+                    pw.println("durga"); //durga
+                    pw.flush();
+                    pw.close();
+                    
+  
+  
+  }
+  
+  
+  }
   
   
   
