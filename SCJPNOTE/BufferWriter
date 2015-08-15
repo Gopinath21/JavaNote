@@ -5,3 +5,41 @@ Constructors:--
         BufferedWriter bw=new BufferedWriter(Writer w);
         BufferedWriter bw=new BufferedWriter(Writer w,int bufferedSize);
   Note: BufferedWriter never communicatres directly with the file compulsary it should communicate via some writer object only
+  o.w we get C.E
+  
+  
+Methods:--
+1) write(char c)
+2)write(char[] c)
+3)write(String s)
+4) flush()
+5)close()
+6newLine(): to insert a newLine character  ///
+
+class BufferedWriterEg{
+         public static void main(String ...a) throws IOException{
+         
+                  FileWriter fw =new FileWriter("abc.txt");
+                  BufferedWriter bw =new BufferedWriter(fw);
+                  bw.write(100);
+                  bw.newLine();
+                  char ch[]={'f','v','a'};
+                           bw.write(ch);
+                           
+                  bw.newLine();
+                  bw.write(" we are insterting the String ");
+                  
+                  bw.flush();
+                  bw.close();
+         
+         }
+
+
+}
+
+Note: If we close the BufferedWriter automatically under writers will be closed. 
+
+
+R&D :-
+
+if we close after the bufferedWriter object , after closing the fileWriter object ,we get C.E(need to check)
