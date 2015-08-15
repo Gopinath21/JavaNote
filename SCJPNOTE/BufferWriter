@@ -1,0 +1,7 @@
+BufferWriter:--
+         BuuferWriter write the character & String data into the file throught the Writer Object..
+         
+Constructors:--
+        BufferedWriter bw=new BufferedWriter(Writer w);
+        BufferedWriter bw=new BufferedWriter(Writer w,int bufferedSize);
+  Note: BufferedWriter never communicatres directly with the file compulsary it should communicate via some writer object only
