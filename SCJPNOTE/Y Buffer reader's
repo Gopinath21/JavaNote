@@ -1,0 +1,2 @@
+FileReader & FileWriter are read (FR) , Write(FW) the data  char by char . && For new line we dont have common method we need to use /n;
+which chages OS to OS.
