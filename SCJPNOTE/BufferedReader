@@ -1,0 +1,36 @@
+BufferedReader:- 
+      We can read the data line by line . 
+      
+Constructors:--
+
+BufferedReader br=new BufferedReader(Reader r);
+BufferedReader br =new BufferedReader(Reader r,int buffersize);
+
+Note: BufferedReader object can't communicate directly , it should be with the some Reader Object .
+
+Methods:--
+1) int read()
+2) int read(char[] c)
+3)close();
+4)String readLine();
+                It attempts to find the nextLine & if the nextLine is available then retuen it . o.w it return null.
+              
+=======================================================================================================
+
+class BufferedReader{
+  public static void main(String ...ar) throws IOException{
+      FileReader fw=new FileReader("abc.txt");
+      BufferedReader br=new BufferedReader(fw);
+      String line=br.readLine();
+      whiles(line!=null){
+          
+      System.out.println(line);
+      
+      line=br.readLine();
+      }
+  br.close();
+  
+  
+  }
+
+}
