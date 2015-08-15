@@ -1,0 +1,36 @@
+By using FileWriter & BufferedWriter we can write charactor & String data into file.
+PrintWriter:-
+          With help of PrintWriter we can Write the character d& String data into file apart from that we can write primitive data
+          types to the file.
+          
+  Constructors :-
+  
+  PrintWriter pw=new PrintWriter(String name);
+  PrintWriter pw =new PrintWriter(File f);
+  PrintWriter pw=new PrintWriter(Writer w);
+  
+  Methods:-
+  
+  write(int ch)
+  write(char []ch)
+  write(String s)
+  flush()
+  close()
+  ====
+  print(char ch)
+  print(int i)
+  print(long l)
+  print(double d)
+  print(String s)
+  print(char[] ch)
+  ==============================================
+  println(char ch)
+  println(int i)
+  println(long l)
+  println(double d)
+  println(String s)
+  println(char[] ch)
+  
+  
+  
+  
