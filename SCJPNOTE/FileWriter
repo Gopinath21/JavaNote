@@ -1,0 +1,38 @@
+ FileWriter :
+ used for : Write the character data to file .
+ 
+ File Override Constustors:--
+ 1)FileWriter fw=new FileWriter(String filename);
+ 2)FileWriter fw =new FileWriter(File f);
+ 
+ Append the data to the file then
+ 
+ 3) FileWriter fw =new FileWriter(String filename, boolean append);
+ 4) FileWriter fw =new FileWriter(File f,boolean b);
+ 
+ Methods:--
+ 1)  write(char ch)
+ 2)  write(char[] ch)
+ 3)  write(String s)
+ 4)  flush()
+ 5)  close()
+ 
+ ===============================================================================================================
+ 
+ class FileWriter {
+         public static void main(String ...arts){
+                  FileWriter fw =new FileWriter("abc.txt");
+                  fw.write(100);
+                  char[] ch={'a','g','g',''g,'v','v'};
+                  fw.write(ch);
+                  fw.write(" we can also write the String");
+                  fw.flush();
+                  fw.close();
+                  
+         
+         }
+ 
+ 
+ }
+ 
+ 
