@@ -1,0 +1,46 @@
+FileReader:---
+Read the File data interm of characters ..
+
+Constructors:-
+FileReader fr =new FileReader(String name);
+FileReader fr=new FileReader(File f);'
+
+
+Methods of FileReader:--
+
+1) int read():  read the NEXT Character from the file and return the its unicode value
+2) int read(char []c)  : 
+It attempts to read the enough characters from the file into the char array & returns the no of the characters which are coppied from
+file to the char[]
+3) close();
+
+
+============================================================================================================
+class FileReadre{
+    public static void main(String []ar){
+    
+            File f =new File("abc.txt");
+            
+            FileReader fr =new FileReader(fr);
+            System.out.println(fr.read()); //unicode 
+            char[] filedata=new char[(int).fr.length()];
+            fr.read(filedata);
+            
+            for(char ch:filedate){
+            System.out.println(ch);
+            }
+            
+          System.out.println("-------------------------------------------");
+            FileReader fr1=new FileReader("filereader");
+          int i=fr1.read();
+          while(i!=-1){
+              System.out.println((char)i);
+              i=fr1.read();
+          }
+            
+            
+            
+    
+    }
+
+}
