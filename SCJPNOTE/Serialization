@@ -8,3 +8,26 @@ DeSerialization:-
   
 Note :- If we try to Serialize or DeSerilize object ,if we get a R.E : NotSerializableException then that object is not implemented
 Serilizable interface. 
+
+class A implements Serrilizable {
+  int a=10;
+  int b=20;
+
+public static void main(String ...aerr) throws IOException{
+        A a =new A();
+    FileOutputSteam fis=new FileOutputStream("abs.txt");
+    ObjectOutputSteam ois=new ObjectOutputStream(fis);
+    ois.writeObject(a);
+}
+}
+
+class B implements Serializable {
+public static void main(String ...ar){
+    FileInputStream fis=new FileInputSteam("abs.txt");
+    ObjectInputSteam ois=new ObjectInputSteam(fis);
+    A a =(A)ois.readObject();
+    System.out.println(a.a +".........."+a.b);
+}
+}
+
+
