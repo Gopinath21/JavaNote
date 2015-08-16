@@ -1,0 +1,10 @@
+Serialization :-
+                The process of converting the java object into file supported or network supported form is called Serialization
+                
+DeSerialization:-
+                The process of geting the objects from File or Network is called  Deserilization.
+                
+  Serializable interface is a marker interface .Presented in java.io package.
+  
+Note :- If we try to Serialize or DeSerilize object ,if we get a R.E : NotSerializableException then that object is not implemented
+Serilizable interface. 
