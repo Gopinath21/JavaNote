@@ -1,0 +1,37 @@
+import java.util.*;
+class Employee implements Comparator{
+        private int eid;
+      //  private String name;
+        Employee(int eid , String name){
+            this.eid=eid, this.name=name;
+        }
+        public String toString(){
+                  return "E: + eid;    
+      }
+      public int compare(Object emp){
+          int   edi1=this.eid;
+          int    edi2=(Employee)emp.eid;
+            if(edi1<edi2){
+              return +10;
+            }
+            else if(edi1>edi2){
+                  return -10;
+              }
+              else return 0;
+      }
+}
+class TreeSetEg {
+      public static void main(String args[]){
+          Employee emp1=new Employee(1);
+          Employee emp2=new Employee(2);
+          Employee emp3=new Employee(3);
+      Employee emp4=new Employee(1);
+      TreeSet t =new TreeSet();
+      t.add(emp1);
+      t.add(emp2);
+      t.add(emp3);
+      t.add(emp4);
+      System.out.println(t);
+      }
+
+}
