@@ -1,0 +1,26 @@
+import java.util.*;
+
+class ListIteratorEg{
+  public static void main(String args[]){
+          LinkedList ll=new LinkedList();
+            ll.add("chituu");
+            ll.add("nagarjuna");
+            ll.add("chiru");
+            ll.add("baani");
+            System.out.println(ll);
+          ListIterator li=  ll.listIterator();
+             while(li.hasNext()){
+                String name=(String)li.next();
+                if(name.equals("chituu"))
+                li.set("samantha");
+                if(name.equals("nagarjuna"))
+                li.remove();
+                if(name.equals("chiru"))
+                li.set("charan");
+                
+             }
+             
+             System.out.println(ll);
+            
+  }
+}
