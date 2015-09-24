@@ -1,0 +1,209 @@
+http://ttux.net/post/java-8-new-features-release-performance-code/
+Java 1.8 (JDK8): What's new? Code examples and performance
+20 Apr 2013 at 15:54:52 - 42 comment(s)
+In a previous post, I talked about new features and performance of java 1.7. Java 7 has now been released a while ago and Java 8 is coming. Java 1.8 is planned to be released on the 9th of September 2013. I'm going to present the main new features of the Java 8 (JDK8). I will show some code examples and run some simple benchmarks to compare it with its predecessor Java 1.6 and Java 1.7.
+
+New features in Java 1.8
+I won't be going through every single new feature that are going to make it in Java 8 but simply the ones I found being noteworthy. For an extensive list, you can visit the official JDK 8 features page. If you think there is something worth mentioning in my article which I have ommitted then leave a comment.
+
+Here are the new Java 1.8 features I'll talk about:
+
+Lambda expressions
+Remove the Permanent Generation
+Small VM
+Parallel Array Sorting
+Bulk Data Operations for Collections
+Define a standard API for Base64 encoding and decoding
+New Date & Time API
+Provide stronger Password-Based-Encryption (PBE) algorithm implementations in the SunJCE provider
+Here are two features that were originally planned but that have been dropped. They could have made it in my list so I just mention it here. Maybe they'll make it in Java 9:
+
+New HTTP Client
+G1 GC: Reduce need for full GCs
+I'll now go through each new features with code example for each when relevant.
+
+Lambda expressions
+One important note, if you want to try lambda expressions with java 8, you need to get the JDK8 with lambda support here: https://jdk8.java.net/lambda/ and not the jdk 8 early access release that is available at https://jdk8.java.net/download.html.
+
+The point of lambda is to be able to pass some code to a method rather than objects. Until java 8, the way to achieve this in java would be to use callbacks. The issue with callbacks is that it leads to verbose code. Like you would write 5 lines of code when the real job is in 1 of these 5 lines.
+
+The other scenario is when dealing with group of data to execute specific algorithm on it.
+
+Here are few code examples of lambda expressions usage.
+
+Inner classes
+An example of what you would do today:
+
+btn.setOnAction(new EventHandler<ActionEvent>() { 
+    @Override 
+    public void handle(ActionEvent event) { 
+        System.out.println("Hello World!"); 
+    } 
+}); 
+With lambda in java 8 you just have:
+
+btn.setOnAction( 
+    event -> System.out.println("Hello World!") 
+); 
+Method references
+Two examples with static and non statics methods.
+
+Statics method:
+
+public class Utils { 
+    public static int compareByLength(String in, String out){ 
+        return in.length() - out.length(); 
+    } 
+} 
+
+public class MyClass { 
+    public void doSomething() { 
+        String[] args = new String[] {"microsoft","apple","linux","oracle"} 
+        Arrays.sort(args, Utils::compareByLength); 
+    }  
+} 
+Non statics method:
+
+public class MyClass implements Comparable<MyObject> { 
+     
+    @Override 
+    public int compareTo(MyObject obj) {return ...} 
+
+    public void doSomething() { 
+        MyObject myObject = new MyObject(); 
+        Arrays.sort(args, myObject::compareTo); 
+    }  
+} 
+There are many other things to say about lambda, this is just a very short overview. You can check the complete Lambda Expressions documentation if you want to learn more about it.
+
+Remove the Permanent Generation
+That is definitely a big one. The Permanent Generation (PermGen) space has completely been removed and is kind of replaced by a new space called Metaspace.
+
+The consequences of the PermGen removal is that obviously the PermSize and MaxPermSize JVM arguments are ignored and you will never get a java.lang.OutOfMemoryError: PermGen error.
+
+However that doesn't mean you won't have to worry about the class metadata memory footprint and it does not eliminate class and classloader memory leaks.
+
+Most allocations for the class metadata are now allocated out of native memory and classes used for describing the class metadata are removed. The Metaspace will dynamically re-size depending on the application demand at runtime. There is obviously some garbage collection involved but I don't think that there is much to worry about here unless you have a problem of classes, classloaders memory leak or an inadequate sizing of the metaspace (as you can specify the maximum metaspace capacity with MaxMetaspaceSize otherwise it is limited by the amount of available native memory).
+
+If you want to know more about this, there is an excellent article about it From PermGen to Metaspace on java.dzone.com.
+
+Small VM
+The goal here is to have a VM which is no more than 3Mb by allowing some features to be excluded at build time. The motivation behind this is to allow the JVM to run on small devices which have very strict static and dynamic memory-footprint requirements.
+
+More info is available here.
+
+Parallel array sorting
+Java 8 introduces a new API for sorting: Arrays#parallelSort.
+
+Arrays#parallelSort uses Fork/Join framework introduced in Java 7 to assign the sorting tasks to multiple threads available in the thread pool.
+
+The different methods available for parallelSort are:
+
+parallelSort(byte[] a) 
+parallelSort(byte[] a, int fromIndex, int toIndex) 
+parallelSort(char[] a) 
+parallelSort(char[] a, int fromIndex, int toIndex) 
+parallelSort(double[] a) 
+parallelSort(double[] a, int fromIndex, int toIndex) 
+parallelSort(float[] a) 
+parallelSort(float[] a, int fromIndex, int toIndex) 
+parallelSort(int[] a) 
+parallelSort(int[] a, int fromIndex, int toIndex) 
+parallelSort(long[] a) 
+parallelSort(long[] a, int fromIndex, int toIndex) 
+parallelSort(short[] a) 
+parallelSort(short[] a, int fromIndex, int toIndex) 
+parallelSort(T[] a) 
+parallelSort(T[] a, Comparator<? super T> c) 
+parallelSort(T[] a, int fromIndex, int toIndex) 
+parallelSort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c) 
+Check out the Arrays javadoc for more info.
+
+An interesting article compares Arrays.sort vs Arrays.parallelSort. It turns out parallelSort might not be better than sort if the number of element to sort is quite small which is to be expected.
+
+Bulk Data Operations for Collections
+This is also called “filter/map/reduce for Java”. To bring this feature, lambda functions are used. There is both a serial and parallel implementation. For more information you can check out the bulk data operations for Collections page on java.net.
+
+Let's see a code example of what you can do with this feature by doing some filtering on a List to find the ones matching a particular List which are names.
+
+List<String> names = Arrays.asList("Smith", "Adams", "Crawford"); 
+List<Person> people = peopleDAO.find("London"); 
+  
+// Using anyMatch and method reference 
+List<Person> anyMatch = people.stream().filter(p -> (names.stream().anyMatch(p.name::contains))).collect(Collectors.toList()); 
+  
+// Using reduce 
+List<Person> reduced = people.stream().filter(p -> names.stream().reduce(false, (Boolean b, String keyword) -> b || p.name.contains(keyword), (l, r) -> l | r)).collect(Collectors.toList()); 
+Given the peopleDAO.find("London") will return thousands of Person. With just one line, I can filter that big List to keep only the Person matching Smith, Adams and Crawford. That's pretty cool, isn't it?
+
+Define a standard API for Base64 encoding and decoding
+Everyone probably agrees that Base64 in java "core" is bit messy and proably most resort to use the apache Base64 library (part of apache commons) instead. So this feature is simply to implement a standard API for Base64 and to avoid people to have to use unsupported classes such as sun.misc.BASE64Encoder and sun.misc.BASE64Decoder or apache commons I suppose. There are also multiple implementations of Base64 in the JDK itself so that will all be replaced by that new standard API.
+
+New Date & Time API
+The built-in date and time handling in Java is not always very convenient to use. In general, if you have to deal with date/time, you would often resort to the use of the Joda Time library. So in Java 8 a new built-in API has been made which is a lot more nice to use.
+
+The current time is represented by the javax.time.Clock class. The class is abstract, so you can not create instances of it.
+
+Below are few code examples.
+
+Clock clock = Clock.systemUTC(); //return the current time based on your system clock and set to UTC. 
+
+Clock clock = Clock.systemDefaultZone(); //return time based on system clock zone 
+
+long time = clock.millis(); //time in milliseconds from January 1st, 1970 
+You'll deal with timezones by using the javax.time.ZoneId class.
+
+ZoneId zone = ZoneId.systemDefault(); //get the ZoneId of the system 
+Clock clock = Clock.system(zone); //set the Clock to given zone 
+
+ZoneId zone = ZoneId.of("Europe/Berlin"); //get the ZoneId from timezone name 
+To deal with "human" date and time, you'll use LocalDate, LocalTime and LocalDateTime.
+
+LocalDate date = LocalDate.now(); 
+String year = date.getYear(); 
+String month = date.getMonthValue(); 
+String day = date.getDayOfMonth(); 
+To do calculations with dates, it is also very easy. Probably the best improvement compared to the current situation with Java < 1.8
+
+Period p = Period.of(2, HOURS); 
+LocalTime time = LocalTime.now(); 
+LocalTime newTime = time.plus(p); // or time.plus(5, HOURS); or time.plusHours(5); 
+Provide stronger Password-Based-Encryption (PBE) algorithm implementations in the SunJCE provider
+In very short, today Java PBE algorithms from the SunJCE provider only cover DESede, and RC2 (40-bit) with SHA1. In java 8, PBE algorithm implementations with stronger cipher and message digest algorithms, such as AES cipher and SHA-2 family message digests, as well as those specified by PKCS#12 are added. That means the following are added:
+
+PBEwithSHA1AndRC4_128
+PBEwithSHA1AndRC4_40
+PBEwithSHA1AndDESede (2-key)
+PBEwithSHA1AndRC2_128
+Also SHA algorithms support will be added. So:
+
+PBEWithHmacSHA1 mac
+PBEWithHmacSHA224 mac
+PBEWithHmacSHA256 mac
+PBEWithHmacSHA384 mac
+PBEWithHmacSHA512 mac
+For more, check out this page on java.net.
+
+That's it, I have now covered all the features I wanted to cover and it is now time for some benchmark to compare Java 1.6 vs Java 1.7 vs Java 1.8.
+
+Performance of Java 1.8 (JDK8)
+I'm going to use the same tests I used in my article about Java 1.7. However I'm going to add 1 more test for Arrays.sort and Arrays.sortParallel. So there are 4 tests:
+
+Test 1: Add 1 million String values to a List (the String is a UUID generated using UUID.randomUUID()).
+Test 2: HashMap with 1 million keys, values. Each key, value pair is being calculated via concurrent thread. The key is a UUID and the int is generated using Math.random()
+Test 3: Printing 1 million items of ArrayList to number of Files (1000). Writing to different files happening in parallel.
+Test 4: Sort an Array of 1 million random Double with Arrays.sort and also Arrays.sortParallel for Java 8.
+Note that I'm using Java 1.8 (b84) which is the latest build available at the time I write this article. I use a Thinkpad E520. I run each test 5 times with each JDK and give the average for each. I set the heap size to 4Gb (-Xms4g -Xmx4g)
+
+Here are the results:
+
+Java 1.6	Java 1.7	Java 1.8
+Test 1	3564ms	3653ms	3614ms
+Test 2	27265ms	28773ms	28326ms
+Test 3	6220ms	6579ms	6231ms
+Test 4	408ms	428ms	423ms
+Test 4 (parallelSort)			193ms
+This concludes this article. The performance of Java 1.8 vs Java 1.7 vs Java 1.6 is not that much different except for the parallelSort of Arrays obviously. I am a little surprised by Java 1.6 performing better and I might investigate this further, in which case I will update this post. That could be due to GCs (G1 for Java 1.7, 1.8 vs ParallelGC for Java 1.6).
+
+I have covered in this post what I believe are the most interesting new features of Java 1.8. There is a lot more to come with Java 9 and 10 but that will be in quite a while. Don't hesitate to leave a comment.
+
