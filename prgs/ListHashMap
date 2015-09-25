@@ -1,0 +1,28 @@
+import java.util.*;
+
+class LinkedHastMapEg{
+		public static void main(String []arts){
+
+			LinkedHashSet l=new LinkedHastSet();
+					l.put("k1", 1);
+					l.put("k2",2);
+					l.put("k3",3);
+					l.put("k4", 5); 
+					Set keys =l.keySet();
+					Collection values =l.values();
+					Set s=l.entrySet();
+					Iterator i=s.iterator();	
+					while(i.hasNext()){
+					Map.Entry me=(Map.Entry)i.next();		
+					System.out.println(me.getKey()+": "+ me.getValue());
+							if(me.getKey().equals(k4)){
+								me.setValue(4);
+								
+
+								}			
+							}
+					
+}
+	
+
+}
