@@ -1,0 +1,6 @@
+Exponetial form bydefault double type;
+
+double d=1.2e3; // valid
+float f = 1.2e3; // Invalid C.E : Possible loss of precision 
+float f =1.2e3f; // valid 
+
