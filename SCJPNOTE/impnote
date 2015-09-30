@@ -4,3 +4,13 @@ double d=1.2e3; // valid
 float f = 1.2e3; // Invalid C.E : Possible loss of precision 
 float f =1.2e3f; // valid 
 
+A character literal can be represented ad unicode representaion.
+which is nothing but '\u ---- ' ; semicolons are mandatory , 4-digi hexa decimal no;
+
+char ch='\u0006'; // valid
+Sop(ch); a;  
+char ch1='\i beaf'; \\ invalid C.E : b/c of 
+
+Arrays:-
+At the time of declarations we cant specify the size ;
+int[20] z;// C.E 
