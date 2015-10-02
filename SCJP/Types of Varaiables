@@ -1,0 +1,6 @@
+Types of variables :-
+
+            Based on values : 2 types 1) Primitive 2) Refrance variables
+            Based on the Position:  i) Instance varaiable  2)static variable 3) local variable
+            Note : If  we try to access instance variable inside static area direcly we will get C.E : Non static variable "Variable name"
+            can't be  referenced from static context.
