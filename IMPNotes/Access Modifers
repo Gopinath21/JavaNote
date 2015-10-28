@@ -1,5 +1,10 @@
  Applicable modifers for Top leave Class :-5
- as pdf
+ 
  abstact strictfp  public <default> final .
+ as p<d>f
+ Applicable modifers for Inner Classes :- 8  (5+3)
+ 
+ note:- ass p<d>f pp
+ abstract strictfp static public <default> , final , , private , protected.
  
  
