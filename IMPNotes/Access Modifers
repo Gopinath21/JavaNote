@@ -25,4 +25,14 @@ abstact class A{
 public void m1();
 }
  
+stictfp & native comination is illegall for methods . I am hoping below things is also illegal combination.
+
+strictfp class A{
+
+	static{
+		System.loadLibrarys("");
+}
+
+public native void m1();
+}
  
