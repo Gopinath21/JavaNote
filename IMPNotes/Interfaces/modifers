@@ -3,3 +3,37 @@ Appilcable modifers for interface variable by defalut:= public static final
 Need know which modifer are not applicable for interface methods.
 Modifiers Not applicable for interface variable := 4
 1) private 2)protected 3) <default> 4)tansient 5)volatile
+
+
+====================
+Naming confict 
+
+interface A{
+
+	void m1();
+}
+interface B{
+	int m1();
+}
+class C extends A,B{}
+
+Hoping this is compilation Error.
+
+
+
+====
+Same 
+interface A{
+	int x=99;
+}
+interface B{
+	int x=999;
+}
+class C extends A,B{} : I hope your this execute without error
+
+this is C.E
+class C extends A,B{
+	public static void main(String[] s){
+	System.out.println(x);
+}
+} // C.E
