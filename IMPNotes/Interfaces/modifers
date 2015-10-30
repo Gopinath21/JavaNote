@@ -1,2 +1,3 @@
-Applicable modifiers for interfaces by default:= public & abstact .
+Applicable modifiers for interface method by default:= public & abstact .
+Appilcable modifers for interface variable by defalut:= public static final
 Need know which modifer are not applicable for interface methods.
