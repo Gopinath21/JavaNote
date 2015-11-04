@@ -22,3 +22,21 @@ public static void m(){
 
 }
 ==
+class A{
+
+public static void main(){		
+	
+	String s=null;
+	System.out.println(s.length());  R.E : NPE // Need to verify
+
+		
+}
+static int x=10/0;//R.E : ExceptionInInsilization caused by java.lang.A.E
+staic{
+
+
+	String s=null;
+	System.out.println(s.length()); //R.E : ExceptionInInsilization caused by java.lang.NPE
+}
+
+} 
