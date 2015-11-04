@@ -1,0 +1,7 @@
+Applicable modidiers for the classes :-
+
+Top leavel class : as pdf             // abstact , strictfp, public ,<default> , final
+local inner class : ass pdf pp        // abstract , strictfp, static , public , private , protected , <default> 
+method local inner class : fast       //final abstract , strictfp;  Need to verify : <default> concept is not applicable for that.
+static inner class : have static 
+Annoinus Inner class : Nothing 
