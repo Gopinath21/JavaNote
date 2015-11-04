@@ -1,0 +1,23 @@
+
+Note: Need to verify whather main method throws Exception or Not.( C.E)  , doubt here is we handled IE in m() it self.
+
+class A{
+
+
+public static void m(){
+
+		try{
+	Thread.sleep();
+	}
+	catch(IntruptedException ie){
+		System.out.println("Intrupeted exception is caughted");
+
+}
+		public static void main(String[] ars){
+
+		m();
+
+}
+}
+
+}
