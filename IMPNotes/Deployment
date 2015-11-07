@@ -1,0 +1,21 @@
+A JAR file is zip or a tar file in Unix,
+
+JAR = Compiled classes with entire directory structure + MANIFEST.MF file in the META-INF directory .
+
+Eg 
+
+duke/
+|------items/
+|         |---Clothing.class
+|         |---Shirt.class
+|         |----- .....
+|
+|-------purchase/
+|         |----Customer.class
+|         |-----Order.class
+|
+|
+|-----------META-INF/
+            |---MANIFEST.MF
+            
+MANIFEST.MF file tells the java runtime which file contains the main() method.
