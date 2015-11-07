@@ -1,0 +1,2 @@
+Error: Throwable <i> Error </i> exceptions are typically unrecoverable external errors and are unchecked.These exceptions are automatically 
+thrown to the calling method if created..
