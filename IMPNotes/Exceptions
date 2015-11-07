@@ -1,2 +1,4 @@
 Error: Throwable <i> Error </i> exceptions are typically unrecoverable external errors and are unchecked.These exceptions are automatically 
 thrown to the calling method if created..
+RuntimeException: A throwable RuntimeException is typically caused by programming mistakes , and is unchecked . It is automatically 
+thrown to the calling method
