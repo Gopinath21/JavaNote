@@ -4,3 +4,7 @@ RuntimeException: A throwable RuntimeException is typically caused by programmin
 thrown to the calling method.
 Exception : Throwable Exceptions are recoverable errors and must be checked. This is means the exceptions must be explicitly 
 thrown to the calling method or caught using a try/catch block.
+
+SecurityException : -
+A SecurityException is thrown if an Security manager exits & Its Security.checkWrite (java.lang.String) method denies write access
+to the file. SecurityException is a RuntimeExcepiton so it is unchecked
