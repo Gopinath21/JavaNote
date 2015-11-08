@@ -1,0 +1,19 @@
+import java.io.*;
+public class Test{
+public static void main(String[] args){
+  Console cons =System.console();
+  try{
+      Sop("Please enter your age");
+      int age = Integer.parseInt(cons.readLine());
+      Sop("Your age is" + age + " years old");
+  
+  }catch(Exception x){
+    S.o.p("Error : NUmber need to be required" );
+  }
+  finally{
+  System.out.prinltn("Exit");
+  }
+  
+}
+
+}
