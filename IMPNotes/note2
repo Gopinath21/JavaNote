@@ -17,3 +17,9 @@ public static void main(String[] args){
 }
 
 }
+//////
+psvm(--){
+String s;
+String s=new String(s);
+
+}
