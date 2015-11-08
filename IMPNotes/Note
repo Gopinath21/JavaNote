@@ -46,3 +46,12 @@ public class Looping{
      
      }
 }
+==============================================================
+public static void main(String[] args){
+int[] numbers={1,5,8,9,22,10};
+myClass calc =new myClass();
+System.out.println(calc.sum(numbers));
+}
+void sum(int[] numbers){
+return true;
+}
