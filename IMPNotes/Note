@@ -28,3 +28,9 @@ a=true;
 b=true;
 // Insert the code 
 }
+===================
+String  str="My String";
+String str1="My String";
+if(str==Str1)System.out.println("equals");
+else 
+Sop("Not equal");
