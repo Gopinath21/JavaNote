@@ -34,3 +34,15 @@ String str1="My String";
 if(str==Str1)System.out.println("equals");
 else 
 Sop("Not equal");
+
+=======================================
+public class Looping{
+     public static void main(String [] ar ){
+      int a=0;
+      int b=10;
+      for(int c=0; b>c;b--)
+      c++;
+      System.out.println(a+" " +b+ "  " +c );
+     
+     }
+}
