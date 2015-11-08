@@ -1,0 +1,3 @@
+ Explict Type casting :--
+ When you want to cast an object to a reference variable of an interface type.
+ When you want to cast an instance of a parent class to its subclass
