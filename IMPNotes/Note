@@ -56,4 +56,6 @@ void sum(int[] numbers){
 return true;
 }
 //C.E @ 07 line [return true]
-NOte : Can we  create a constructor for the abstact class.
+NOte : Can we  create a constructor for the abstact class?
+
+
