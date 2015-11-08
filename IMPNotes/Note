@@ -15,5 +15,5 @@ public static void start();
 public abstract void drive();
 }
 
-C.E @ 3 
+C.E @ 3  // abstract & static is illegal combination
 -----------------------------------------
