@@ -7,3 +7,13 @@ Need to verify
 int a=10,b=5,c=8,d=2;
 boolean e= a%d < d && a/b < b+a*d;
 S.o.p(e);
+
+-----------------------------------------
+abstract interface Drivable{
+public static final int WHEELS =4;
+public static void start();
+public abstract void drive();
+}
+
+C.E @ 3 
+-----------------------------------------
