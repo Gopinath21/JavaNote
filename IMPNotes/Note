@@ -1,3 +1,9 @@
  Explict Type casting :--
  When you want to cast an object to a reference variable of an interface type.
  When you want to cast an instance of a parent class to its subclass
+
+Nesting of oparators :
+Need to verify
+int a=10,b=5,c=8,d=2;
+boolean e= a%d < d && a/b < b+a*d;
+S.o.p(e);
