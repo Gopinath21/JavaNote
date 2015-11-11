@@ -1,13 +1,17 @@
- Applicable modifers for Top leave Class :-5
+1)Applicable modifers for Top leave Class :-5
  
  abstact strictfp  public <default> final .
  as p<d>f
- Applicable modifers for Inner Classes :- 8  (5+3)
+2) Applicable modifers for Inner Classes :- 8  (5+3)
  
  note:- ass p<d>f pp
  abstract strictfp static public <default> , final , , private , protected.
 29/10/2015 
- For methods not applicable  combination (illegal Combination) :-
+ 3)Applicable modifers or access specifier for Constructor's:- 4
+PPPd -{public, private, protected , <default>}
+
+
+4) For methods not applicable  combination (illegal Combination) :-
 
 abstract - {native,final,strictfp,static,synchronized,private}
 
@@ -15,8 +19,7 @@ a- {p nfs ss}
 NOte : for methods 6 combination are illegeal 
 [ap nfs ss]
 
-Applicable modifers or access specifier for Constructor's:- 4
-PPPd -{public, private, protected , <default>}
+
 
 
 Need to Verify:=
