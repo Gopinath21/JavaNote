@@ -1,0 +1,36 @@
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
+public class NewClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Sairam ");
+		
+		TreeMap<String,String> a=new TreeMap<String,String>();
+		
+		a.put("a", "v1");
+		a.put("b", "v2");
+		a.put("c", "v2");
+		
+		
+		
+
+	
+		
+		 for (Entry<String, String> entry : a.entrySet()) {
+			 
+		//	 System.out.println("key"+entry.getKey()+".........."+"value"+entry.getValue());
+	          
+			 
+			 if (entry.getValue().equals("v2")) {
+	                System.out.println(entry.getKey());
+	               
+	            }
+	        }
+		
+		
+	}
+
+}
